@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="GithabApp" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollButton" destination="ygY-Jp-eXf" id="ZUV-dw-xw5"/>
+                <outlet property="spiner" destination="CJu-Rm-Nqw" id="93r-mo-XEw"/>
+                <outlet property="tableView" destination="gTb-uI-7rw" id="dWS-YE-gcn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gTb-uI-7rw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="KDn-QW-bet"/>
+                        <outlet property="delegate" destination="-1" id="EgO-hp-L6O"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-Jp-eXf">
+                    <rect key="frame" x="334.5" y="782.5" width="54.5" height="54.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ygY-Jp-eXf" secondAttribute="height" multiplier="1:1" id="b7M-6T-ga3"/>
+                    </constraints>
+                    <state key="normal" image="arrow"/>
+                    <connections>
+                        <action selector="scrollButtonPresed:" destination="-1" eventType="touchUpInside" id="lyD-VH-LJB"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJu-Rm-Nqw">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gTb-uI-7rw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="03p-Sc-HvX"/>
+                <constraint firstItem="ygY-Jp-eXf" firstAttribute="width" secondItem="gTb-uI-7rw" secondAttribute="height" multiplier="1:15" id="CRd-sQ-m4w"/>
+                <constraint firstItem="CJu-Rm-Nqw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FXo-i5-iPL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ygY-Jp-eXf" secondAttribute="bottom" constant="25" id="JwI-E4-1fq"/>
+                <constraint firstItem="CJu-Rm-Nqw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LS9-Ow-kwo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ygY-Jp-eXf" secondAttribute="trailing" constant="25" id="Qfn-OY-yX2"/>
+                <constraint firstItem="gTb-uI-7rw" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="XMZ-h3-xZv"/>
+                <constraint firstItem="gTb-uI-7rw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ccd-ii-EWn"/>
+                <constraint firstItem="gTb-uI-7rw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uus-uK-Ue6"/>
+            </constraints>
+            <point key="canvasLocation" x="-13.043478260869566" y="73.660714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow" width="451" height="450"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

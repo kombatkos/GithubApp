@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="GithabApp" customModuleProvider="target">
+            <connections>
+                <outlet property="centerVerticalConstraint" destination="8Ya-kf-9ka" id="WE0-kU-kvJ"/>
+                <outlet property="imageView" destination="nBt-1Q-uYa" id="Xdg-nb-AKr"/>
+                <outlet property="loginButton" destination="qXN-kr-A2a" id="Y4h-mm-9uD"/>
+                <outlet property="logoAspectRatioConstraint" destination="cZb-Bh-7YD" id="1hq-TZ-Vvn"/>
+                <outlet property="logoLabel" destination="JHi-Tq-gxM" id="jL5-e0-x3i"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GitHub-Mark" translatesAutoresizingMaskIntoConstraints="NO" id="nBt-1Q-uYa">
+                    <rect key="frame" x="117.5" y="308.5" width="179" height="179"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nBt-1Q-uYa" secondAttribute="height" multiplier="1:1" id="QJL-0I-sPV"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXN-kr-A2a">
+                    <rect key="frame" x="183.5" y="463" width="47" height="30"/>
+                    <state key="normal" title="Sign in">
+                        <color key="titleColor" red="0.4789186176823782" green="0.83050540135025319" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="SignInButtonPressed:" destination="-1" eventType="touchUpInside" id="a4G-Sb-zpP"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repositories on Github.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHi-Tq-gxM">
+                    <rect key="frame" x="86.5" y="436" width="241" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nBt-1Q-uYa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-50" id="8Ya-kf-9ka"/>
+                <constraint firstItem="JHi-Tq-gxM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8kS-cx-j9Q"/>
+                <constraint firstItem="nBt-1Q-uYa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DRC-TC-m9F"/>
+                <constraint firstItem="qXN-kr-A2a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VrK-VZ-i4g"/>
+                <constraint firstItem="nBt-1Q-uYa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:5" id="cZb-Bh-7YD"/>
+                <constraint firstItem="JHi-Tq-gxM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i8M-s4-n8R"/>
+                <constraint firstItem="qXN-kr-A2a" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="30" id="iax-EA-Lj5"/>
+            </constraints>
+            <point key="canvasLocation" x="67" y="34"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="GitHub-Mark" width="560" height="560"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
