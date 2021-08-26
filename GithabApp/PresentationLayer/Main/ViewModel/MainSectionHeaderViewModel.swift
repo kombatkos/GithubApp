@@ -11,7 +11,7 @@ var imageCache = NSCache<NSString, NSData>()
 
 class MainSectionHeaderViewModel: MainSectionHeaderViewModelType {
     
-    var user: User
+    private var user: User
     
     var name: String {
         return user.login ?? "User"

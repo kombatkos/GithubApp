@@ -35,7 +35,7 @@ class MainSectionHeader: UITableViewHeaderFooterView {
         avatarImageView?.layer.cornerRadius = frame.height / 2
     }
     
-    func getImage() {
+    private func getImage() {
         viewModel?.imageData.binde {
             guard let data = $0, let image = UIImage(data: data) else { return }
             DispatchQueue.main.async { [weak self] in

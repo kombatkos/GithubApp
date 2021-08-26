@@ -7,7 +7,6 @@
 
 import UIKit
 import SafariServices
-import AudioToolbox
 
 protocol MainViewControllerViewModelType {
     var delegate: MainViewControllerDelegate? { get set }
@@ -30,8 +29,6 @@ class MainViewController: UIViewController {
     
     var viewModel: MainViewControllerViewModelType?
     weak var assembly: IPresentationAssembly?
-    
-    private var isVibration = true
     
     @IBOutlet weak var spiner: UIActivityIndicatorView?
     @IBOutlet weak var scrollButton: UIButton?

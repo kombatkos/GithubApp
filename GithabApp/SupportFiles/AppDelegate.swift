@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        if let _ = coreAssembly.secureDataManager.getToken() {
-//            let mainVC = presentationSssembly.createMainViewController()
-//            let navigationController = UINavigationController(rootViewController: mainVC)
-//            window?.rootViewController = navigationController
-//        } else {
+        if let _ = coreAssembly.secureDataManager.getToken() {
+            let mainVC = presentationSssembly.createMainViewController()
+            let navigationController = UINavigationController(rootViewController: mainVC)
+            window?.rootViewController = navigationController
+        } else {
             let splashVC = presentationSssembly.createSplashViewController()
             window?.rootViewController = splashVC
-//        }
+        }
         window?.makeKeyAndVisible()
         return true
     }

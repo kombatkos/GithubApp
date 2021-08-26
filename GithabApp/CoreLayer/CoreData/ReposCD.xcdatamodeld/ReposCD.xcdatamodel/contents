@@ -3,6 +3,11 @@
     <entity name="DownloadsRepos" representedClassName="DownloadsRepos" syncable="YES" codeGenerationType="class">
         <attribute name="repoName" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="repoName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="DownloadsRepos" positionX="-63" positionY="-18" width="128" height="59"/>

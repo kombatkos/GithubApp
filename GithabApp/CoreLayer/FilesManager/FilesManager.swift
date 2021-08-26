@@ -73,7 +73,7 @@ class FilesManager: IFilesManager {
         guard let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fooURL = documentsPath.appendingPathComponent(folderName)
         let fileExists = FileManager().fileExists(atPath: fooURL.path)
-        print(fooURL)
+        
         if !fileExists {
             do {
                 let newPath = documentsPath.path + "/\(folderName)"

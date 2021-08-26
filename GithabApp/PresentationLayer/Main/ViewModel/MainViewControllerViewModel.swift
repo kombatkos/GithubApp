@@ -14,7 +14,7 @@ class MainViewControllerViewModel: MainViewControllerViewModelType {
     var cdRequestService: ICDRequestService
     var delegate: MainViewControllerDelegate?
     
-    var users: [User] = [] {
+    private var users: [User] = [] {
         didSet {
             delegate?.reloadData()
         }
@@ -41,7 +41,7 @@ class MainViewControllerViewModel: MainViewControllerViewModelType {
         })
     }
     
-    func getRepos(_ user: User?) {
+    private func getRepos(_ user: User?) {
         DispatchQueue.global().async {
             guard let login = user?.login else { return }
             self.requestService.getRepos(login: login, completion: { [weak self] result in

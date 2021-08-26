@@ -66,7 +66,7 @@ class MainCell: UITableViewCell {
                 guard let error = error else { return }
                 self?.showAlert(error: error)
             }
-            
+            self?.isVibration = true
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
@@ -77,7 +77,7 @@ class MainCell: UITableViewCell {
         delegate?.presentAlert(actionSheet)
     }
     
-    func showAlert(error: Error) {
+    private func showAlert(error: Error) {
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .cancel)
         alert.addAction(ok)

@@ -33,7 +33,7 @@ class SplashViewController: UIViewController {
         present(vc, animated: true)
     }
     
-    func startAnimation() {
+    private func startAnimation() {
         centerVerticalConstraint?.constant -= 100
         logoAspectRatioConstraint?.constant += 50
         
