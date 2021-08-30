@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870B393426D828D3002A0BC3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870B393226D828D3002A0BC3 /* TabBarController.swift */; };
 		871D92FF26CD4B6700957B38 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D92FE26CD4B6700957B38 /* Token.swift */; };
 		8757965726C26843002CF04A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8757965626C26843002CF04A /* Box.swift */; };
 		8757965E26C28C3D002CF04A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8757965D26C28C3D002CF04A /* Users.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		28AD5B303B625DA0705E0FB4 /* Pods_GithabApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithabApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68323B294A7E389F8B32607B /* Pods-GithabApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithabApp.release.xcconfig"; path = "Target Support Files/Pods-GithabApp/Pods-GithabApp.release.xcconfig"; sourceTree = "<group>"; };
+		870B393226D828D3002A0BC3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		871D92FE26CD4B6700957B38 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		8757965626C26843002CF04A /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		8757965D26C28C3D002CF04A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -150,10 +152,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		870B393126D8289B002A0BC3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				870B393226D828D3002A0BC3 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		871DD75026DC164000E80D8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87F1D22326D66D650089F7FE /* ObjectExtensions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8757964C26C262CE002CF04A /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
 				8757967726C2D0EA002CF04A /* PresentationAssembly.swift */,
+				870B393126D8289B002A0BC3 /* TabBar */,
 				8757965826C2884E002CF04A /* DataBinding */,
 				8760645626CD102D009A5DFE /* Splash */,
 				8757965126C26394002CF04A /* Main */,
@@ -340,7 +359,6 @@
 		87AB453C26C240DA002125DB = {
 			isa = PBXGroup;
 			children = (
-				87676D5226D7060D006D9A11 /* Config.xcconfig */,
 				87AB454726C240DA002125DB /* GithabApp */,
 				87AB454626C240DA002125DB /* Products */,
 				ACE1F7E4B817862DD755D456 /* Pods */,
@@ -371,6 +389,7 @@
 		87AB455C26C240F7002125DB /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				87676D5226D7060D006D9A11 /* Config.xcconfig */,
 				87AB454826C240DA002125DB /* AppDelegate.swift */,
 				87AB455126C240DB002125DB /* Assets.xcassets */,
 				87AB455326C240DB002125DB /* LaunchScreen.storyboard */,
@@ -443,8 +462,8 @@
 		87F1D21D26D66BEF0089F7FE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				871DD75026DC164000E80D8D /* Model */,
 				87F1D21E26D66C290089F7FE /* ReposCD.xcdatamodeld */,
-				87F1D22326D66D650089F7FE /* ObjectExtensions.swift */,
 				87F1D22126D66C460089F7FE /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -618,6 +637,7 @@
 				8778AF4226CE67B900EABA41 /* MainSectionHeader.swift in Sources */,
 				8766BCD926D6801C00008D95 /* DownloadLictCellViewModel.swift in Sources */,
 				8778AF3826CE394900EABA41 /* SplashViewControllerViewModel.swift in Sources */,
+				870B393426D828D3002A0BC3 /* TabBarController.swift in Sources */,
 				8778AF3E26CE61C700EABA41 /* MainCell.swift in Sources */,
 				87F1D21A26D65F240089F7FE /* FilesManager.swift in Sources */,
 			);

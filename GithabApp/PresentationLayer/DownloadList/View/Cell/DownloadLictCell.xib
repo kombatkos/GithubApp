@@ -19,29 +19,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="oQ8-xf-k4m">
-                        <rect key="frame" x="20" y="5" width="287" height="21.5"/>
+                        <rect key="frame" x="20" y="10" width="287" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="EnX-CS-oq1">
-                        <rect key="frame" x="20" y="48.5" width="287" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner: UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="EnX-CS-oq1">
+                        <rect key="frame" x="20" y="43.5" width="229" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="placeholderTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="70.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dKx-tF-4ua">
+                        <rect key="frame" x="259" y="10" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="dKx-tF-4ua" secondAttribute="height" multiplier="1:1" id="hUs-va-nKd"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="oQ8-xf-k4m" secondAttribute="trailing" constant="20" symbolic="YES" id="6Ha-cN-HQA"/>
-                    <constraint firstAttribute="trailing" secondItem="EnX-CS-oq1" secondAttribute="trailing" constant="20" symbolic="YES" id="IKw-I2-BnN"/>
-                    <constraint firstItem="oQ8-xf-k4m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="L1v-uy-WiA"/>
+                    <constraint firstAttribute="trailing" secondItem="dKx-tF-4ua" secondAttribute="trailing" constant="20" symbolic="YES" id="Fyt-I5-H9P"/>
+                    <constraint firstItem="oQ8-xf-k4m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="L1v-uy-WiA"/>
                     <constraint firstItem="EnX-CS-oq1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="OTN-rA-KMO"/>
-                    <constraint firstAttribute="bottom" secondItem="EnX-CS-oq1" secondAttribute="bottom" constant="5" id="ZbO-RI-I5J"/>
+                    <constraint firstAttribute="bottom" secondItem="dKx-tF-4ua" secondAttribute="bottom" constant="10" id="Wbn-eG-LZR"/>
+                    <constraint firstAttribute="bottom" secondItem="EnX-CS-oq1" secondAttribute="bottom" constant="10" id="ZbO-RI-I5J"/>
+                    <constraint firstItem="dKx-tF-4ua" firstAttribute="leading" secondItem="EnX-CS-oq1" secondAttribute="trailing" constant="10" id="cnn-Qt-CWT"/>
+                    <constraint firstItem="dKx-tF-4ua" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="m80-z3-Gsl"/>
                     <constraint firstItem="oQ8-xf-k4m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="sbN-Pc-nPv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="avatarImageView" destination="dKx-tF-4ua" id="1kd-ok-7b1"/>
                 <outlet property="repoName" destination="oQ8-xf-k4m" id="7Tt-5W-JAE"/>
                 <outlet property="userName" destination="EnX-CS-oq1" id="UDr-si-RLM"/>
             </connections>
@@ -49,6 +59,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="70.jpg" width="240" height="240"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

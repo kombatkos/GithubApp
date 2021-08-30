@@ -30,6 +30,8 @@ class MainViewController: UIViewController {
     var viewModel: MainViewControllerViewModelType?
     weak var assembly: IPresentationAssembly?
     
+    @IBOutlet weak var bannerView: UIView?
+    @IBOutlet weak var searchButton: UIButton?
     @IBOutlet weak var spiner: UIActivityIndicatorView?
     @IBOutlet weak var scrollButton: UIButton?
     @IBOutlet weak var tableView: UITableView?
@@ -42,11 +44,29 @@ class MainViewController: UIViewController {
         setSearchController()
         configureTableView()
         configureNavigationBar()
-        scrollButton?.alpha = 0
+        configureUIElements()
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        self.view.setNeedsLayout()
+        UIView.animate(withDuration: 0.5) {
+            self.bannerView?.alpha = 0
+            self.navigationController?.navigationBar.isHidden = false
+            let searchTextField = self.searchController.value(forKey: "searchTextField") as? UITextField
+            searchTextField?.becomeFirstResponder()
+        } completion: { _ in
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func scrollButtonPresed(_ sender: UIButton) {
         tableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    private func configureUIElements() {
+        scrollButton?.alpha = 0
+        spiner?.color = .red
+        searchButton?.layer.cornerRadius = 10
     }
     
     private func configureNavigationBar() {
@@ -58,6 +78,7 @@ class MainViewController: UIViewController {
                                                  action: #selector(openDownloadList))
         navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.isHidden = true
     }
     
     @objc private func openDownloadList() {

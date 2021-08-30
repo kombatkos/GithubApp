@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if let _ = coreAssembly.secureDataManager.getToken() {
-            let mainVC = presentationSssembly.createMainViewController()
+            let mainVC = presentationSssembly.createMainViewController(assembly: presentationSssembly)
             let navigationController = UINavigationController(rootViewController: mainVC)
             window?.rootViewController = navigationController
         } else {
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         app.keyWindow?.rootViewController?.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            let mainVC = self.presentationSssembly.createMainViewController()
+            let mainVC = self.presentationSssembly.createMainViewController(assembly: self.presentationSssembly)
             let navigationController = UINavigationController(rootViewController: mainVC)
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()

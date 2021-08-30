@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IPresentationAssembly: AnyObject {
-    func createMainViewController() -> MainViewController
+    func createMainViewController(assembly: IPresentationAssembly?) -> MainViewController
     func createSplashViewController() -> SplashViewController
     func createDownloadListViewController() -> DownloadListViewController
 }
@@ -17,13 +17,13 @@ class PresentationAssembly: IPresentationAssembly {
     
     var serviceAssembly: IServiceAssembly = ServiceAssembly()
     
-    func createMainViewController() -> MainViewController {
+    func createMainViewController(assembly: IPresentationAssembly?) -> MainViewController {
         let vc = MainViewController(nibName: "MainViewController", bundle: nil)
         let viewModel = MainViewControllerViewModel(requestService: serviceAssembly.requestService,
                                                     downloadService: serviceAssembly.downloadService,
                                                     cdRequestService: serviceAssembly.cdRequestService)
         vc.viewModel = viewModel
-        vc.assembly = self
+        vc.assembly = assembly
         return vc
     }
     

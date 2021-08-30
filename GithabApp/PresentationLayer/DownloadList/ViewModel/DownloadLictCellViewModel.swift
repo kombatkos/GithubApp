@@ -19,7 +19,17 @@ class DownloadLictCellViewModel: DownloadLictCellViewModelType {
         return "Owner: \(repo?.userName ?? "Noname")"
     }
     
+    var imageData: Box<Data?> = Box(nil)
+    
     init(repo: DownloadsRepos?) {
         self.repo = repo
+        imageData.value = fetchImage(repo?.avatarURL)
+    }
+    
+    private func fetchImage(_ urlString: String?) -> Data? {
+        guard let urlString = repo?.avatarURL,
+              let url = URL(string: urlString),
+              let data = try? Data(contentsOf: url) else { return nil }
+        return data
     }
 }

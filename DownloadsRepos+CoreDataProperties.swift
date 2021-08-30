@@ -18,5 +18,5 @@ extension DownloadsRepos {
 
     @NSManaged public var repoName: String?
     @NSManaged public var userName: String?
-
+    @NSManaged public var avatarURL: String?
 }

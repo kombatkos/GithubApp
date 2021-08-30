@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:DownloadsRepos+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:DownloadsRepos+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:GithabApp.xcodeproj">
    </FileRef>
    <FileRef

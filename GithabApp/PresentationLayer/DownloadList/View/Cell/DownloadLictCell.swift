@@ -10,6 +10,7 @@ import UIKit
 protocol DownloadLictCellViewModelType {
     var repoName: String { get }
     var userName: String? { get }
+    var imageData: Box<Data?> { get }
 }
 
 class DownloadLictCell: UITableViewCell {
@@ -18,6 +19,7 @@ class DownloadLictCell: UITableViewCell {
     
     @IBOutlet weak var userName: UILabel?
     @IBOutlet weak var repoName: UILabel?
+    @IBOutlet weak var avatarImageView: UIImageView?
     
     
     var viewModel: DownloadLictCellViewModelType? {
@@ -26,6 +28,22 @@ class DownloadLictCell: UITableViewCell {
             DispatchQueue.main.async {
                 self.repoName?.text = newModel.repoName
                 self.userName?.text = newModel.userName ?? ""
+            }
+            getImage()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let width = avatarImageView?.frame.width else { return }
+        avatarImageView?.layer.cornerRadius = width / 5
+    }
+    
+    private func getImage() {
+        viewModel?.imageData.binde {
+            guard let data = $0, let image = UIImage(data: data) else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.avatarImageView?.image = image
             }
         }
     }

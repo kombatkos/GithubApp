@@ -27,6 +27,11 @@ class DownloadListViewController: UIViewController {
         setEditButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView?.reloadData()
+    }
+    
     private func configureNavigationBar() {
         navigationItem.title = "Download list"
     }

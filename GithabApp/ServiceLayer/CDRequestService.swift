@@ -42,8 +42,10 @@ struct CDRequestService: ICDRequestService {
             context.performAndWait {
             
                 guard let user = repo.owner?.login,
-                      let name = repo.name else { return }
-                let newRepo = DownloadsRepos(userName: user, repoName: name, in: context)
+                      let name = repo.name,
+                      let avatarString = repo.owner?.avatarUrl else { return }
+                
+                let newRepo = DownloadsRepos(userName: user, repoName: name, avatarURL: avatarString, in: context)
                 let request: NSFetchRequest<DownloadsRepos> = DownloadsRepos.fetchRequest()
                 
                 do {
