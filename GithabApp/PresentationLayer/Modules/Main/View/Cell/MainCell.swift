@@ -69,7 +69,9 @@ class MainCell: UITableViewCell {
             self?.isVibration = true
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            self?.isVibration = true
+        }
         
         actionSheet.addAction(download)
         actionSheet.addAction(cancel)
